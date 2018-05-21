@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <data>
+
+        <menuitem id="menu_root_citasrgl" name="CitasRGL" sequence="30" />
+
+        <menuitem id="menu_root_citasrgl_cita_view" name="Citas" parent="menu_root_citasrgl"/>
+
+        <record model="ir.actions.act_window" id="listar_cita_action">
+            <field name="name">CitasRGL</field>
+            <field name="res_model">citasrgl.cita</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<menuitem id="menu_root_citasrgl_listar_cita"  name="Listado de citas" parent="menu_root_citasrgl_cita_view" action="listar_cita_action" />
+
+
+        <record model="ir.ui.view" id="view_citasrgl_cita_tree">
+
+            <field name="name">view.citasrgl.cita.tree</field>
+
+            <field name="model">citasrgl.cita</field>
+
+            <field name="arch" type="xml">
+
+                <tree string="Idea list">
+
+                    <field name="name"/>
+
+                    <field name="description"/>
+
+                    <field name="date"/>
+
+
+                    
+                </tree>
+
+            </field>
+
+        </record>
+
+
+
+        <record model="ir.ui.view" id="view_citasrgl_cita_form">
+
+            <field name='name'>view.citasrgl.cita.form</field>
+
+            <field name="model">citasrgl.cita</field>
+
+            <field name="arch" type="xml">
+
+                <form string="cita form" version="7.0">
+
+                    <sheet>
+
+                        <group colspan="2" col="2">
+
+                            <group>                               
+
+                                <field name="name"/>
+
+                            </group>
+
+                            <group>
+
+                                <field name="date"/>
+
+
+                            </group>
+
+                        </group>
+
+                        <notebook colspan="4">
+
+                            <page string="Cita">
+
+                                <field name="description"/>
+
+                            </page>
+
+                        </notebook>
+
+                    </sheet>
+
+                </form>
+
+            </field>
+
+        </record>
+
+
+    </data>
+
+</odoo>
